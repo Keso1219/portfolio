@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-newsreader: "Newsreader", Georgia, serif;
+  --font-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --bg-paper: #F4F0EA;
+  --bg-card: #FAF8F5;
+  --bg-charcoal: #161618;
+  --ink-primary: #161618;
+  --ink-navy: #1A2333;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F4F0EA;
+  color: #161618;
+}
+
+body {
+  background-color: #F4F0EA;
+  color: #161618;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #161618;
+  color: #F4F0EA;
+}
+
+/* Warm Workshop 60x60px Architectural Hairline Grid */
+.bg-workshop-grid {
+  background-image:
+    linear-gradient(to right, rgba(22, 22, 24, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 22, 24, 0.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Nordic Charcoal 60x60px Architectural Hairline Grid (Dark Slabs) */
+.bg-charcoal-grid,
+.charcoal-slab {
+  background-color: #161618;
+  color: #F4F0EA;
+  border: 1px solid #2A2A2E;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Tactile Hairline Card Elevation */
+.workshop-card,
+.paper-card {
+  background-color: #FAF8F5;
+  border: 1px solid rgba(22, 22, 24, 0.14);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.workshop-card:hover,
+.paper-card:hover {
+  border-color: rgba(22, 22, 24, 0.35);
+}
+
+.charcoal-card {
+  background-color: #212125;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
