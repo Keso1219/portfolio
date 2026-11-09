@@ -197,9 +197,9 @@ export default function InteractiveWorkbench() {
             <Layers className="w-3.5 h-3.5 text-flow-deep" />
             <span>[ SECTION 01 • VERIFIED CASE STUDIES ]</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl text-ink tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl font-bold text-ink tracking-tight leading-[1.08]">
             Real systems shipped for{" "}
-            <span className="italic font-normal text-flow-deep">Swedish teams.</span>
+            <span className="text-flow-deep">Swedish teams.</span>
           </h2>
         </div>
         <p className="text-ink-muted text-sm sm:text-base max-w-sm leading-relaxed">

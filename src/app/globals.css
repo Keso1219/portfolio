@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --font-newsreader: "Newsreader", Georgia, serif;
-  --font-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-jetbrains: "JetBrains Mono", monospace;
   --bg-paper: #F4F0EA;
   --bg-card: #FAF8F5;
   --bg-charcoal: #161618;
@@ -17,11 +14,13 @@ html {
   scroll-behavior: smooth;
   background-color: #F4F0EA;
   color: #161618;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body {
   background-color: #F4F0EA;
   color: #161618;
+  font-family: "Times New Roman", Times, serif;
   overflow-x: hidden;
 }
 

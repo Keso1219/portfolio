@@ -47,35 +47,35 @@ export default function HomePage() {
   )}&body=${encodeURIComponent(defaultMessage)}`;
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[#C85A32] selection:text-[#F4F0EA]">
+    <div className="min-h-screen flex flex-col selection:bg-[#161618] selection:text-[#F4F0EA]">
       {/* Sticky Top Architectural Bar */}
       <header className="sticky top-0 z-40 bg-[#F4F0EA]/90 backdrop-blur-md border-b border-[#D8D0C2]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
           <a href="#" className="flex items-center gap-2.5 group">
             <span className="w-2.5 h-2.5 rounded-full bg-[#3D7A5A] ring-4 ring-[#3D7A5A]/20" />
-            <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-[#161618]">
+            <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#161618]">
               [ KEVIN SORANI • GOTHENBURG ]
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-6 font-mono text-xs uppercase tracking-wider text-[#52504C]">
-            <a href="#workbench" className="hover:text-[#C85A32] transition-colors">
+          <nav className="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider text-[#52504C]">
+            <a href="#workbench" className="hover:text-[#2563EB] transition-colors">
               01. Case Studies
             </a>
-            <a href="#bottleneck-machine" className="hover:text-[#C85A32] transition-colors">
+            <a href="#bottleneck-machine" className="hover:text-[#2563EB] transition-colors">
               02. Bottleneck Machine
             </a>
-            <a href="#motion-lab" className="hover:text-[#C85A32] transition-colors">
+            <a href="#motion-lab" className="hover:text-[#2563EB] transition-colors">
               03. Motion Lab
             </a>
-            <a href="#origin" className="hover:text-[#C85A32] transition-colors">
+            <a href="#origin" className="hover:text-[#2563EB] transition-colors">
               04. About
             </a>
           </nav>
 
           <a
             href="#contact-bench"
-            className="inline-flex items-center gap-1.5 bg-[#161618] hover:bg-[#C85A32] text-[#F4F0EA] font-mono text-xs uppercase tracking-wider px-3.5 py-2 rounded-sm transition-colors"
+            className="inline-flex items-center gap-1.5 bg-[#161618] hover:bg-[#2563EB] text-[#F4F0EA] text-xs uppercase tracking-wider px-3.5 py-2 rounded-sm transition-colors"
           >
             <span>Tell me your chore</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -90,14 +90,14 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left 7 Cols: Editorial Hook & Crisp Subheadline */}
               <div className="lg:col-span-7">
-                <div className="inline-flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#161618] bg-[#EAE3D5] border border-[#161618]/20 px-3 py-1.5 rounded-sm mb-5">
-                  <Wrench className="w-3.5 h-3.5 text-[#C85A32]" />
+                <div className="inline-flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-[#161618] bg-[#EAE3D5] border border-[#161618]/20 px-3 py-1.5 rounded-sm mb-5">
+                  <Wrench className="w-3.5 h-3.5 text-[#2563EB]" />
                   <span>AI WORKSHOPS & WORKFLOW ARCHITECT • GOTHENBURG</span>
                 </div>
 
-                <h1 className="font-serif text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5">
+                <h1 className="text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5 font-bold">
                   Teaching humans what to{" "}
-                  <span className="italic font-normal text-[#C85A32]">
+                  <span className="text-[#2563EB]">
                     actually do
                   </span>{" "}
                   with AI.
@@ -105,7 +105,7 @@ export default function HomePage() {
 
                 <p className="text-base sm:text-xl text-[#52504C] leading-relaxed mb-7 max-w-xl">
                   I run hands-on{" "}
-                  <span className="text-[#161618] font-medium underline decoration-[#C85A32]/60 decoration-2 underline-offset-4">
+                  <span className="text-[#161618] font-semibold underline decoration-[#2563EB]/60 decoration-2 underline-offset-4">
                     AI Fluency Workshops
                   </span>{" "}
                   and build custom workflows that give your team 4–6 hours of their day back—inside the tools you already own.
@@ -115,22 +115,22 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-7">
                   <a
                     href="#bottleneck-machine"
-                    className="inline-flex items-center justify-center gap-2 bg-[#C85A32] hover:bg-[#b04b25] text-[#F4F0EA] font-mono text-xs sm:text-sm uppercase tracking-wider px-6 py-4 rounded-sm shadow-[3px_3px_0px_#161618] hover:translate-y-[-1px] transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-[#161618] hover:bg-[#2563EB] text-[#F4F0EA] text-xs sm:text-sm uppercase tracking-wider px-6 py-4 rounded-sm shadow-[3px_3px_0px_#2563EB] hover:translate-y-[-1px] transition-all font-semibold"
                   >
-                    <Sparkles className="w-4 h-4" />
+                    <Sparkles className="w-4 h-4 text-[#93C5FD]" />
                     <span>Test the Bottleneck Machine</span>
                   </a>
                   <a
                     href="#contact-bench"
-                    className="inline-flex items-center justify-center gap-2 bg-[#FBF9F5] hover:bg-[#EAE3D5] text-[#161618] border border-[#161618] font-mono text-xs sm:text-sm uppercase tracking-wider px-6 py-4 rounded-sm transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-[#FBF9F5] hover:bg-[#EAE3D5] text-[#161618] border border-[#161618] text-xs sm:text-sm uppercase tracking-wider px-6 py-4 rounded-sm transition-colors font-semibold"
                   >
-                    <MessageSquare className="w-4 h-4 text-[#C85A32]" />
+                    <MessageSquare className="w-4 h-4 text-[#3D7A5A]" />
                     <span>Send me an annoying chore</span>
                   </a>
                 </div>
 
                 {/* Quick Human Trust Line */}
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-[#52504C]">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#52504C]">
                   <span className="inline-flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#3D7A5A]" />
                     Anthropic Certified (Claude Code & Fluency)
@@ -145,7 +145,7 @@ export default function HomePage() {
               {/* Right 5 Cols: Warm Studio Portrait Card */}
               <div className="lg:col-span-5">
                 <div className="paper-card rounded-md p-4 sm:p-5 relative">
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D0C2] font-mono text-[11px] text-[#52504C]">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D0C2] text-[11px] text-[#52504C]">
                     <span>[ KEVIN SORANI ]</span>
                     <span className="inline-flex items-center gap-1 text-[#3D7A5A] font-semibold">
                       <MapPin className="w-3 h-3" /> GOTHENBURG, SE
@@ -165,13 +165,13 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-[#D8D0C2] flex items-center justify-between text-xs font-mono">
+                  <div className="mt-3 pt-3 border-t border-[#D8D0C2] flex items-center justify-between text-xs">
                     <span className="text-[#52504C]">EDUCATOR &rarr; AI ARCHITECT</span>
                     <a
                       href="https://www.linkedin.com/in/kevin-sorani-b70248312/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[#C85A32] hover:underline font-semibold"
+                      className="inline-flex items-center gap-1 text-[#2563EB] hover:underline font-semibold"
                     >
                       LinkedIn <ExternalLink className="w-3 h-3" />
                     </a>
@@ -180,7 +180,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3-PILLAR VERIFIED PROOF STRIP (CLEAN & SCANNABLE) */}
+            {/* 3-PILLAR VERIFIED PROOF STRIP */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 {
@@ -205,10 +205,10 @@ export default function HomePage() {
                   className="paper-card rounded-md p-5 flex flex-col justify-between group"
                 >
                   <div>
-                    <span className="font-mono text-[11px] text-[#C85A32] block mb-1.5">
+                    <span className="text-[11px] text-[#2563EB] font-semibold block mb-1.5">
                       {item.badge}
                     </span>
-                    <div className="font-serif text-2xl sm:text-3xl text-[#161618] mb-1.5 group-hover:text-[#C85A32] transition-colors">
+                    <div className="text-2xl sm:text-3xl font-bold text-[#161618] mb-1.5 group-hover:text-[#2563EB] transition-colors">
                       {item.metric}
                     </div>
                   </div>
@@ -230,20 +230,20 @@ export default function HomePage() {
         {/* SECTION 03: VISUAL ARCHITECTURE & MOTION LAB */}
         <MotionPlayhouse />
 
-        {/* SECTION 04: ORIGIN & VERIFIED CREDENTIALS (CONCISE) */}
+        {/* SECTION 04: ORIGIN & VERIFIED CREDENTIALS */}
         <section id="origin" className="py-16 sm:py-20 border-b border-[#D8D0C2]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               {/* Left 7 Cols: Why an Educator Builds Better Systems */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C85A32] bg-[#C85A32]/10 border border-[#C85A32]/30 px-3 py-1 rounded-sm mb-3">
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/30 px-3 py-1 rounded-sm mb-3 font-semibold">
                   <Terminal className="w-3.5 h-3.5" />
                   <span>[ SECTION 04 // WHY AN EDUCATOR ]</span>
                 </div>
 
-                <h2 className="font-serif text-3xl sm:text-5xl text-[#161618] tracking-tight leading-[1.08] mb-5">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#161618] tracking-tight leading-[1.08] mb-5">
                   Software engineers love complexity.{" "}
-                  <span className="italic font-normal text-[#C85A32]">
+                  <span className="text-[#3D7A5A]">
                     Teachers love clarity.
                   </span>
                 </h2>
@@ -259,10 +259,10 @@ export default function HomePage() {
                 {/* Two Core Ways We Work Together */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="paper-card rounded-md p-5">
-                    <div className="font-mono text-xs text-[#C85A32] mb-1">
+                    <div className="text-xs text-[#2563EB] font-semibold mb-1">
                       [ TRACK A // HANDS-ON TRAINING ]
                     </div>
-                    <h3 className="font-serif text-xl text-[#161618] mb-1.5">
+                    <h3 className="text-xl font-bold text-[#161618] mb-1.5">
                       Half-Day AI Fluency Workshop
                     </h3>
                     <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
@@ -271,10 +271,10 @@ export default function HomePage() {
                   </div>
 
                   <div className="paper-card rounded-md p-5">
-                    <div className="font-mono text-xs text-[#3D7A5A] mb-1">
+                    <div className="text-xs text-[#3D7A5A] font-semibold mb-1">
                       [ TRACK B // DONE-FOR-YOU BUILD ]
                     </div>
-                    <h3 className="font-serif text-xl text-[#161618] mb-1.5">
+                    <h3 className="text-xl font-bold text-[#161618] mb-1.5">
                       Custom Workflow Sprint
                     </h3>
                     <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
@@ -288,30 +288,30 @@ export default function HomePage() {
               <div className="lg:col-span-5 charcoal-slab rounded-md p-6">
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#2A2A2E]">
                   <div className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-[#D4A359]" />
-                    <span className="font-mono text-xs uppercase tracking-widest text-[#F4F0EA]">
+                    <Award className="w-4 h-4 text-[#93C5FD]" />
+                    <span className="text-xs uppercase tracking-widest text-[#F4F0EA]">
                       [ VERIFIED CREDENTIALS ]
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] text-[#3D7A5A] bg-[#3D7A5A]/15 border border-[#3D7A5A]/40 px-2 py-0.5 rounded-sm">
+                  <span className="text-[10px] text-[#3D7A5A] bg-[#3D7A5A]/15 border border-[#3D7A5A]/40 px-2 py-0.5 rounded-sm">
                     LIVE VERIFICATION
                   </span>
                 </div>
 
                 <div className="space-y-3.5">
                   <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
-                    <div className="flex items-center justify-between font-mono text-[11px] text-[#D4A359] mb-1">
+                    <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
                       <span>ANTHROPIC • MAR 2026</span>
                       <span>ID: 9q8igvwetrn8</span>
                     </div>
-                    <h4 className="font-serif text-lg text-[#F4F0EA] mb-2">
+                    <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
                       Claude Code in Action
                     </h4>
                     <a
                       href="https://verify.skilljar.com/c/9q8igvwetrn8"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#C85A32] hover:text-[#F4F0EA] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[11px] text-[#3D7A5A] hover:text-[#F4F0EA] transition-colors font-semibold"
                     >
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Verify on Skilljar <ExternalLink className="w-3 h-3" />
@@ -319,18 +319,18 @@ export default function HomePage() {
                   </div>
 
                   <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
-                    <div className="flex items-center justify-between font-mono text-[11px] text-[#D4A359] mb-1">
+                    <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
                       <span>ANTHROPIC • MAR 2026</span>
                       <span>ID: c8wftw996muk</span>
                     </div>
-                    <h4 className="font-serif text-lg text-[#F4F0EA] mb-2">
+                    <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
                       AI Fluency: Framework & Foundations
                     </h4>
                     <a
                       href="https://verify.skilljar.com/c/c8wftw996muk"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#C85A32] hover:text-[#F4F0EA] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[11px] text-[#3D7A5A] hover:text-[#F4F0EA] transition-colors font-semibold"
                     >
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Verify on Skilljar <ExternalLink className="w-3 h-3" />
@@ -346,12 +346,12 @@ export default function HomePage() {
         <section id="contact-bench" className="py-16 sm:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="paper-card rounded-md p-6 sm:p-10 border-2 border-[#161618]">
-              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#3D7A5A] bg-[#3D7A5A]/10 border border-[#3D7A5A]/30 px-3 py-1 rounded-sm mb-3">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#3D7A5A] bg-[#3D7A5A]/10 border border-[#3D7A5A]/30 px-3 py-1 rounded-sm mb-3 font-semibold">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>[ THE OPEN WORKBENCH // ZERO SALES PITCH ]</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#161618] tracking-tight leading-[1.08] mb-3">
+              <h2 className="text-3xl sm:text-5xl font-bold text-[#161618] tracking-tight leading-[1.08] mb-3">
                 What is the most annoying computer chore on your desk?
               </h2>
               <p className="text-sm sm:text-base text-[#52504C] leading-relaxed mb-6">
@@ -364,14 +364,14 @@ export default function HomePage() {
                   rows={4}
                   value={defaultMessage}
                   onChange={(e) => setChoreDraft(e.target.value)}
-                  className="w-full p-4 rounded-sm bg-[#F4F0EA] border border-[#161618] font-mono text-xs sm:text-sm text-[#161618] focus:outline-none focus:ring-2 focus:ring-[#C85A32]"
+                  className="w-full p-4 rounded-sm bg-[#F4F0EA] border border-[#161618] text-xs sm:text-sm text-[#161618] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <a
                   href={mailtoHref}
-                  className="inline-flex items-center justify-center gap-2 bg-[#C85A32] hover:bg-[#b04b25] text-[#F4F0EA] font-mono text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#F4F0EA] text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors font-semibold"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Send via Email</span>
@@ -379,7 +379,7 @@ export default function HomePage() {
 
                 <button
                   onClick={handleCopyMessage}
-                  className="inline-flex items-center justify-center gap-2 bg-[#161618] hover:bg-[#2A2A2E] text-[#F4F0EA] font-mono text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-[#161618] hover:bg-[#2A2A2E] text-[#F4F0EA] text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors font-semibold"
                 >
                   {copiedNote ? (
                     <>
@@ -398,10 +398,10 @@ export default function HomePage() {
                   href="https://www.linkedin.com/in/kevin-sorani-b70248312/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#FBF9F5] hover:bg-[#EAE3D5] text-[#161618] border border-[#161618] font-mono text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FBF9F5] hover:bg-[#EAE3D5] text-[#161618] border border-[#161618] text-xs uppercase tracking-wider py-3.5 px-4 rounded-sm transition-colors font-semibold"
                 >
                   <span>Open LinkedIn DM</span>
-                  <ExternalLink className="w-4 h-4 text-[#C85A32]" />
+                  <ExternalLink className="w-4 h-4 text-[#2563EB]" />
                 </a>
               </div>
             </div>
@@ -411,11 +411,11 @@ export default function HomePage() {
 
       {/* STANDARD NORDIC CHARCOAL EDITORIAL FOOTER */}
       <footer className="bg-[#161618] text-[#F4F0EA] border-t border-[#2A2A2E] py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#A09C94]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A09C94]">
           <div>
             KEVIN SORANI &bull; AI WORKSHOPS &amp; AUTOMATION SPECIALIST
           </div>
-          <div className="text-[#D4A359]">
+          <div className="text-[#93C5FD]">
             GOTHENBURG, SWEDEN &bull; 2026
           </div>
         </div>

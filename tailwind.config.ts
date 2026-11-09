@@ -41,9 +41,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-newsreader)", "Georgia", "serif"],
-        sans: ["var(--font-jakarta)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "monospace"],
+        serif: ['"Times New Roman"', "Times", "serif"],
+        sans: ['"Times New Roman"', "Times", "serif"],
+        mono: ['"Times New Roman"', "Times", "serif"],
       },
     },
   },

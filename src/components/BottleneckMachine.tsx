@@ -120,9 +120,9 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
             <Sparkles className="w-3.5 h-3.5 text-flow-blue" />
             <span>[ INTERACTIVE TOY 01 • THE BOTTLENECK MACHINE ]</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl text-ink tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl font-bold text-ink tracking-tight leading-[1.08]">
             Drop a boring computer chore{" "}
-            <span className="italic font-normal text-drag-deep">into the grinder.</span>
+            <span className="text-flow-deep">into the grinder.</span>
           </h2>
         </div>
         <p className="text-ink-muted text-sm sm:text-base max-w-sm leading-relaxed">
@@ -269,9 +269,9 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                     <div className="flex items-center gap-2 font-mono text-[11px] text-[#A1A1AA] uppercase mb-1">
                       <Clock className="w-3.5 h-3.5 text-[#93C5FD]" /> Hours Returned / Year
                     </div>
-                    <div className="font-serif text-3xl sm:text-4xl font-semibold text-[#F4F0EA]">
+                    <div className="text-3xl sm:text-4xl font-bold text-[#F4F0EA]">
                       {hoursReclaimedYear.toLocaleString()}{" "}
-                      <span className="text-lg font-normal italic text-[#93C5FD]">hrs/yr</span>
+                      <span className="text-lg font-normal text-[#93C5FD]">hrs/yr</span>
                     </div>
                     <div className="text-[11px] font-mono text-[#71717A] mt-1">
                       ≈ {Math.round(hoursReclaimedYear / 8)} full workdays back
@@ -282,9 +282,9 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                     <div className="flex items-center gap-2 font-mono text-[11px] text-[#A1A1AA] uppercase mb-1">
                       <Coins className="w-3.5 h-3.5 text-emerald-400" /> Annual Drag Eliminated
                     </div>
-                    <div className="font-serif text-3xl sm:text-4xl font-semibold text-emerald-300">
+                    <div className="text-3xl sm:text-4xl font-bold text-emerald-300">
                       {annualSEKReclaimed.toLocaleString()}{" "}
-                      <span className="text-lg font-normal italic">SEK</span>
+                      <span className="text-lg font-normal">SEK</span>
                     </div>
                     <div className="text-[11px] font-mono text-[#71717A] mt-1">
                       ≈ €{annualEURReclaimed.toLocaleString()} / yr in freed capacity

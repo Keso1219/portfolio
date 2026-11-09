@@ -55,13 +55,13 @@ export default function MotionPlayhouse() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#C85A32] bg-[#C85A32]/10 border border-[#C85A32]/30 px-3 py-1 rounded-sm mb-3">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/30 px-3 py-1 rounded-sm mb-3 font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
               <span>[ SECTION 03 // MOTION & VISUAL LAB ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#161618] tracking-tight leading-[1.08]">
+            <h2 className="text-3xl sm:text-5xl font-bold text-[#161618] tracking-tight leading-[1.08]">
               Clear thinking deserves{" "}
-              <span className="italic font-normal text-[#C85A32]">tactile visual craft.</span>
+              <span className="text-[#2563EB]">tactile visual craft.</span>
             </h2>
           </div>
           <p className="text-[#52504C] max-w-sm text-sm sm:text-base leading-relaxed">
@@ -75,24 +75,24 @@ export default function MotionPlayhouse() {
           <div className="lg:col-span-7 charcoal-slab rounded-md p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-[#2A2A2E]">
               <div className="flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-[#C85A32]" />
-                <span className="font-mono text-xs uppercase tracking-widest text-[#F4F0EA]">
+                <Cpu className="w-4 h-4 text-[#93C5FD]" />
+                <span className="text-xs uppercase tracking-widest text-[#F4F0EA]">
                   [ REMOTION / HYPERFRAMES SPRING SANDBOX ]
                 </span>
               </div>
-              <span className="font-mono text-[11px] text-[#3D7A5A] bg-[#3D7A5A]/15 border border-[#3D7A5A]/40 px-2.5 py-0.5 rounded-sm">
+              <span className="text-[11px] text-[#3D7A5A] bg-[#3D7A5A]/15 border border-[#3D7A5A]/40 px-2.5 py-0.5 rounded-sm">
                 60 FPS • INTERACTIVE
               </span>
             </div>
 
             {/* Live Stage */}
             <div className="bg-[#0F0F11] border border-[#2A2A2E] rounded-sm p-5 mb-5 relative min-h-[210px] flex flex-col justify-center">
-              <div className="absolute top-3 left-3 font-mono text-[11px] text-[#A09C94]">
-                FRAME: <span className="text-[#D4A359]">{String(frame).padStart(3, "0")}f</span> / 150f ({(frame / 30).toFixed(2)}s)
+              <div className="absolute top-3 left-3 text-[11px] text-[#A09C94]">
+                FRAME: <span className="text-[#93C5FD]">{String(frame).padStart(3, "0")}f</span> / 150f ({(frame / 30).toFixed(2)}s)
               </div>
               <button
                 onClick={() => setReplayKey((k) => k + 1)}
-                className="absolute top-3 right-3 inline-flex items-center gap-1.5 font-mono text-[11px] text-[#F4F0EA] bg-[#222226] hover:bg-[#C85A32] border border-[#3A3A40] px-2.5 py-1 rounded-sm transition-colors"
+                className="absolute top-3 right-3 inline-flex items-center gap-1.5 text-[11px] text-[#F4F0EA] bg-[#222226] hover:bg-[#2563EB] border border-[#3A3A40] px-2.5 py-1 rounded-sm transition-colors"
               >
                 <RotateCcw className="w-3 h-3" />
                 Trigger Spring
@@ -101,8 +101,8 @@ export default function MotionPlayhouse() {
               {/* Animated Pipeline Nodes inside Sandbox */}
               <div key={replayKey} className="mt-6 grid grid-cols-3 gap-3 items-center">
                 {[
-                  { step: "01. INGEST", label: "Messy Inbox & PDFs", color: "#C85A32", threshold: 0.15 },
-                  { step: "02. REASON", label: "Claude / Gemini Schema", color: "#D4A359", threshold: 0.45 },
+                  { step: "01. INGEST", label: "Messy Inbox & PDFs", color: "#93C5FD", threshold: 0.15 },
+                  { step: "02. REASON", label: "Claude / Gemini Schema", color: "#60A5FA", threshold: 0.45 },
                   { step: "03. SHIP", label: "Zero-Admin Output", color: "#3D7A5A", threshold: 0.75 },
                 ].map((node, idx) => {
                   const isActive = progress >= node.threshold;
@@ -127,7 +127,7 @@ export default function MotionPlayhouse() {
                       }}
                     >
                       <span
-                        className="font-mono text-[10px] tracking-widest uppercase mb-1"
+                        className="text-[10px] tracking-widest uppercase mb-1"
                         style={{ color: node.color }}
                       >
                         {node.step}
@@ -157,9 +157,9 @@ export default function MotionPlayhouse() {
             {/* Interactive Controls */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="bg-[#1E1E22] border border-[#2A2A2E] p-3 rounded-sm">
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between text-[11px] mb-1">
                   <span className="text-[#A09C94]">TIMELINE SCRUB</span>
-                  <span className="text-[#D4A359]">{frame}f</span>
+                  <span className="text-[#93C5FD]">{frame}f</span>
                 </div>
                 <input
                   type="range"
@@ -167,12 +167,12 @@ export default function MotionPlayhouse() {
                   max={150}
                   value={frame}
                   onChange={(e) => setFrame(Number(e.target.value))}
-                  className="w-full accent-[#C85A32] cursor-pointer"
+                  className="w-full accent-[#2563EB] cursor-pointer"
                 />
               </div>
 
               <div className="bg-[#1E1E22] border border-[#2A2A2E] p-3 rounded-sm">
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between text-[11px] mb-1">
                   <span className="text-[#A09C94]">STIFFNESS</span>
                   <span className="text-[#F4F0EA]">{stiffness}</span>
                 </div>
@@ -185,12 +185,12 @@ export default function MotionPlayhouse() {
                     setStiffness(Number(e.target.value));
                     setReplayKey((k) => k + 1);
                   }}
-                  className="w-full accent-[#C85A32] cursor-pointer"
+                  className="w-full accent-[#2563EB] cursor-pointer"
                 />
               </div>
 
               <div className="bg-[#1E1E22] border border-[#2A2A2E] p-3 rounded-sm">
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between text-[11px] mb-1">
                   <span className="text-[#A09C94]">DAMPING</span>
                   <span className="text-[#F4F0EA]">{damping}</span>
                 </div>
@@ -203,7 +203,7 @@ export default function MotionPlayhouse() {
                     setDamping(Number(e.target.value));
                     setReplayKey((k) => k + 1);
                   }}
-                  className="w-full accent-[#C85A32] cursor-pointer"
+                  className="w-full accent-[#2563EB] cursor-pointer"
                 />
               </div>
             </div>
@@ -213,12 +213,12 @@ export default function MotionPlayhouse() {
           <div className="lg:col-span-5 paper-card rounded-md p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#C85A32]">
+                <span className="text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
                   [ THE CORE RULE ]
                 </span>
-                <span className="font-mono text-[11px] text-[#52504C]">RULE #01</span>
+                <span className="text-[11px] text-[#52504C]">RULE #01</span>
               </div>
-              <h3 className="font-serif text-2xl text-[#161618] mb-2 leading-snug">
+              <h3 className="text-2xl font-bold text-[#161618] mb-2 leading-snug">
                 &ldquo;I will not use AI to replace my thinking.&rdquo;
               </h3>
               <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed mb-4">
@@ -232,9 +232,9 @@ export default function MotionPlayhouse() {
                 alt="I will not use AI to replace my thinking chalkboard"
                 className="w-full h-48 sm:h-52 object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
               />
-              <div className="p-3 bg-[#161618] text-[#F4F0EA] flex items-center justify-between font-mono text-[11px]">
+              <div className="p-3 bg-[#161618] text-[#F4F0EA] flex items-center justify-between text-[11px]">
                 <span>GOTHENBURG WORKSHOP</span>
-                <span className="text-[#D4A359]">HUMAN-IN-THE-LOOP</span>
+                <span className="text-[#93C5FD]">HUMAN-IN-THE-LOOP</span>
               </div>
             </div>
           </div>
@@ -244,8 +244,8 @@ export default function MotionPlayhouse() {
         <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-[#C85A32]" />
-              <span className="font-mono text-xs uppercase tracking-widest text-[#161618] font-semibold">
+              <Layers className="w-4 h-4 text-[#2563EB]" />
+              <span className="text-xs uppercase tracking-widest text-[#161618] font-semibold">
                 [ NORDIC CHARCOAL FIELD DIAGRAMS • CLICK TO INSPECT ]
               </span>
             </div>
@@ -265,16 +265,16 @@ export default function MotionPlayhouse() {
                       alt={item.title}
                       className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
                     />
-                    <div className="absolute top-3 right-3 bg-[#161618]/90 text-[#F4F0EA] border border-[#3A3A40] px-2.5 py-1 rounded-sm font-mono text-[10px] inline-flex items-center gap-1.5 opacity-90 group-hover:bg-[#C85A32] group-hover:border-[#C85A32] transition-colors">
+                    <div className="absolute top-3 right-3 bg-[#161618]/90 text-[#F4F0EA] border border-[#3A3A40] px-2.5 py-1 rounded-sm text-[10px] inline-flex items-center gap-1.5 opacity-90 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-colors">
                       <Maximize2 className="w-3 h-3" />
                       INSPECT
                     </div>
                   </div>
                   <div className="p-4">
-                    <div className="font-mono text-[10px] text-[#C85A32] mb-1">
+                    <div className="text-[10px] text-[#2563EB] font-semibold mb-1">
                       {item.tag}
                     </div>
-                    <h4 className="font-serif text-lg sm:text-xl text-[#161618] mb-1 leading-snug group-hover:text-[#C85A32] transition-colors">
+                    <h4 className="text-lg sm:text-xl font-bold text-[#161618] mb-1 leading-snug group-hover:text-[#2563EB] transition-colors">
                       {item.title}
                     </h4>
                     <p className="text-xs text-[#52504C] leading-relaxed">
@@ -300,16 +300,16 @@ export default function MotionPlayhouse() {
           >
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#2A2A2E]">
               <div>
-                <span className="font-mono text-xs text-[#D4A359] block">
+                <span className="text-xs text-[#93C5FD] block">
                   {activeLightbox.tag}
                 </span>
-                <h3 className="font-serif text-xl sm:text-2xl text-[#F4F0EA]">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#F4F0EA]">
                   {activeLightbox.title}
                 </h3>
               </div>
               <button
                 onClick={() => setActiveLightbox(null)}
-                className="p-2 rounded-sm bg-[#222226] hover:bg-[#C85A32] text-[#F4F0EA] transition-colors"
+                className="p-2 rounded-sm bg-[#222226] hover:bg-[#2563EB] text-[#F4F0EA] transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -328,8 +328,8 @@ export default function MotionPlayhouse() {
                   <p className="text-sm text-[#D8D0C2] leading-relaxed mb-4">
                     {activeLightbox.subtitle}
                   </p>
-                  <div className="p-4 bg-[#222226] border-l-2 border-[#C85A32] rounded-r-sm">
-                    <span className="font-mono text-[11px] text-[#D4A359] block mb-1">
+                  <div className="p-4 bg-[#222226] border-l-2 border-[#2563EB] rounded-r-sm">
+                    <span className="text-[11px] text-[#93C5FD] block mb-1">
                       KEY LESSON
                     </span>
                     <p className="text-xs sm:text-sm text-[#F4F0EA] leading-relaxed">
@@ -339,7 +339,7 @@ export default function MotionPlayhouse() {
                 </div>
                 <button
                   onClick={() => setActiveLightbox(null)}
-                  className="w-full py-2.5 px-4 bg-[#C85A32] hover:bg-[#b04b25] text-[#F4F0EA] font-mono text-xs uppercase tracking-wider rounded-sm transition-colors"
+                  className="w-full py-2.5 px-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#F4F0EA] text-xs uppercase tracking-wider rounded-sm transition-colors font-semibold"
                 >
                   Close Sheet
                 </button>
