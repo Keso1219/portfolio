@@ -10,14 +10,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    workerThreads: false,
-    cpus: 1,
-  },
-  webpack: (config) => {
-    config.cache = false;
-    config.parallelism = 1;
-    return config;
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: "/:file(kevin-portrait.jpg|simpsons-chalkboard.png|infographic-payroll.png|infographic-tdd.png|infographic-copilot.png)",
+          destination: "https://raw.githubusercontent.com/Keso1219/portfolio/main/public/:file",
+        },
+      ],
+    };
   },
 };
 
