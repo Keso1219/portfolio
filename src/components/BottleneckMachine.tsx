@@ -88,7 +88,7 @@ const CHORE_PRESETS: ChorePreset[] = [
 ];
 
 interface Props {
-  onSelectChoreForContact?: (summary: string) => void;
+  onSelectChoreForContact?: (summary: string, subject: string) => void;
 }
 
 export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
@@ -325,7 +325,8 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                 onClick={() => {
                   if (onSelectChoreForContact) {
                     onSelectChoreForContact(
-                      `Hi Kevin! We have ${teamSize} people spending ~${hoursPerDay} hrs/day on "${selectedPreset.label}" (~${annualSEKReclaimed.toLocaleString()} SEK/yr drag). Let's look at eliminating it.`
+                      `Hi Kevin! We have ${teamSize} people spending ~${hoursPerDay} hrs/day on "${selectedPreset.label}" (~${annualSEKReclaimed.toLocaleString()} SEK/yr drag). Let's look at eliminating it.`,
+                      `15-Min Bottleneck Audit: ${selectedPreset.label} (${teamSize} ${teamSize === 1 ? "person" : "people"})`
                     );
                   }
                 }}
