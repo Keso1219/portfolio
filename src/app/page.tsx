@@ -21,6 +21,7 @@ import {
 import BottleneckMachine from "@/components/BottleneckMachine";
 import InteractiveWorkbench from "@/components/InteractiveWorkbench";
 import MotionPlayhouse from "@/components/MotionPlayhouse";
+import { CertificationsCarousel } from "@/components/CertificationsCarousel";
 
 export default function HomePage() {
   const [choreDraft, setChoreDraft] = useState<string>("");
@@ -126,7 +127,7 @@ export default function HomePage() {
                   <span className="text-[#161618] font-semibold underline decoration-[#2563EB]/60 decoration-2 underline-offset-4">
                     AI Fluency Workshops
                   </span>{" "}
-                  and build custom workflows that give your team 4–6 hours of their day back—inside the tools you already own.
+                  and build custom workflows that give your team 4 to 6 hours of their day back, right inside the tools you already own.
                 </p>
 
                 {/* Primary & Secondary Action Buttons */}
@@ -151,7 +152,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#52504C]">
                   <span className="inline-flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#3D7A5A]" />
-                    Anthropic Certified (AI Fluency &amp; Claude 101)
+                    6x Anthropic Certified (AI Fluency, Code &amp; Cowork)
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#3D7A5A]" />
@@ -252,26 +253,49 @@ export default function HomePage() {
         <section id="origin" className="py-16 sm:py-20 border-b border-[#D8D0C2]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-              {/* Left 7 Cols: Why an Educator Builds Better Systems */}
+              {/* Left 7 Cols: The Cross-Functional Operator */}
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/30 px-3 py-1 rounded-sm mb-3 font-semibold">
                   <Terminal className="w-3.5 h-3.5" />
-                  <span>[ SECTION 04 // WHY AN EDUCATOR ]</span>
+                  <span>[ SECTION 04 // THE CROSS-FUNCTIONAL OPERATOR ]</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-5xl font-bold text-[#161618] tracking-tight leading-[1.08] mb-5">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#161618] tracking-tight leading-[1.08] mb-4">
                   Software engineers love complexity.{" "}
                   <span className="text-[#3D7A5A]">
-                    Teachers love clarity.
+                    Operators demand results. Teachers bring clarity.
                   </span>
                 </h2>
 
-                <p className="text-[#52504C] text-base sm:text-lg leading-relaxed mb-6">
-                  Before building AI workflows for Swedish businesses, I worked in Gothenburg classrooms and coached youth boxing and football. You learn one rule fast:{" "}
-                  <strong className="text-[#161618] font-semibold">
-                    if someone doesn&apos;t understand the system, the system is broken.
-                  </strong>{" "}
-                  I sit next to your team, skip the buzzwords, and wire up workflows that hand people their afternoons back.
+                <p className="text-[#52504C] text-sm sm:text-base leading-relaxed mb-4">
+                  Most AI consultants are either programmers who have never had to hit a quarterly sales target, or theoretical trainers who have never shipped production software. My background spans the entire operational floor:
+                </p>
+
+                <ul className="space-y-2 mb-6 text-xs sm:text-sm text-[#161618]">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-1.5 shrink-0" />
+                    <span><strong className="font-semibold text-[#161618]">STEM University Education:</strong> Engineering systems down to first principles.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-1.5 shrink-0" />
+                    <span><strong className="font-semibold text-[#161618]">B2B Sales &amp; Commercial Pipelines:</strong> Knowing the exact friction that kills deal momentum.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-1.5 shrink-0" />
+                    <span><strong className="font-semibold text-[#161618]">IT Logistics &amp; Shift Operations:</strong> Living through the daily chaos of inventory, ERPs, and warehouse workflows.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3D7A5A] mt-1.5 shrink-0" />
+                    <span><strong className="font-semibold text-[#161618]">Classroom Pedagogy &amp; Youth Coaching:</strong> The human empathy to know that if your team doesn&apos;t adopt the system on Monday morning, the system is broken.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3D7A5A] mt-1.5 shrink-0" />
+                    <span><strong className="font-semibold text-[#161618]">Solo Business Founder:</strong> Direct P&amp;L accountability. I build systems with zero SEK license waste because I respect the bottom line.</span>
+                  </li>
+                </ul>
+
+                <p className="text-[#52504C] text-sm sm:text-base leading-relaxed mb-6 font-medium">
+                  I sit next to your team, eliminate the jargon, and build workflows that hand your operators their afternoons back.
                 </p>
 
                 {/* Two Core Ways We Work Together */}
@@ -296,65 +320,15 @@ export default function HomePage() {
                       Custom Workflow Sprint
                     </h3>
                     <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
-                      I take your highest-drag chore—inbox triage, data reconciliation, or CRM routing—and build an owned automation with 0 SEK license bloat.
+                      I take your highest-drag chore (inbox triage, data reconciliation, or CRM routing) and build an owned automation with zero SEK license bloat.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Right 5 Cols: Verified Credentials Ledger */}
-              <div className="lg:col-span-5 charcoal-slab rounded-md p-6">
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#2A2A2E]">
-                  <div className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-[#93C5FD]" />
-                    <span className="text-xs uppercase tracking-widest text-[#F4F0EA]">
-                      [ VERIFIED CREDENTIALS ]
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-[#3D7A5A] bg-[#3D7A5A]/15 border border-[#3D7A5A]/40 px-2 py-0.5 rounded-sm">
-                    LIVE VERIFICATION
-                  </span>
-                </div>
-
-                <div className="space-y-3.5">
-                  <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
-                    <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
-                      <span>ANTHROPIC • MAY 2026</span>
-                      <span>ID: 9q8igvwetrn8</span>
-                    </div>
-                    <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
-                      AI Fluency: Framework &amp; Foundations
-                    </h4>
-                    <a
-                      href="https://verify.skilljar.com/c/9q8igvwetrn8"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[11px] text-[#3D7A5A] hover:text-[#F4F0EA] transition-colors font-semibold"
-                    >
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      Verify on Skilljar <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-
-                  <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
-                    <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
-                      <span>ANTHROPIC • MAY 2026</span>
-                      <span>ID: c8wftw996muk</span>
-                    </div>
-                    <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
-                      Claude 101 &amp; AI Foundations
-                    </h4>
-                    <a
-                      href="https://verify.skilljar.com/c/c8wftw996muk"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[11px] text-[#3D7A5A] hover:text-[#F4F0EA] transition-colors font-semibold"
-                    >
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      Verify on Skilljar <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
+              {/* Right 5 Cols: Multi-Credential Carousel */}
+              <div className="lg:col-span-5">
+                <CertificationsCarousel />
               </div>
             </div>
           </div>
