@@ -151,7 +151,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#52504C]">
                   <span className="inline-flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#3D7A5A]" />
-                    Anthropic Certified (Claude Code & Fluency)
+                    Anthropic Certified (AI Fluency &amp; Claude 101)
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#3D7A5A]" />
@@ -319,11 +319,11 @@ export default function HomePage() {
                 <div className="space-y-3.5">
                   <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
                     <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
-                      <span>ANTHROPIC • MAR 2026</span>
+                      <span>ANTHROPIC • MAY 2026</span>
                       <span>ID: 9q8igvwetrn8</span>
                     </div>
                     <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
-                      Claude Code in Action
+                      AI Fluency: Framework &amp; Foundations
                     </h4>
                     <a
                       href="https://verify.skilljar.com/c/9q8igvwetrn8"
@@ -338,11 +338,11 @@ export default function HomePage() {
 
                   <div className="p-4 bg-[#1E1E22] border border-[#2A2A2E] rounded-sm">
                     <div className="flex items-center justify-between text-[11px] text-[#93C5FD] mb-1">
-                      <span>ANTHROPIC • MAR 2026</span>
+                      <span>ANTHROPIC • MAY 2026</span>
                       <span>ID: c8wftw996muk</span>
                     </div>
                     <h4 className="text-lg font-bold text-[#F4F0EA] mb-2">
-                      AI Fluency: Framework & Foundations
+                      Claude 101 &amp; AI Foundations
                     </h4>
                     <a
                       href="https://verify.skilljar.com/c/c8wftw996muk"

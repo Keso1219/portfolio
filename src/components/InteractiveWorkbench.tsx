@@ -40,18 +40,18 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "real-estate",
     number: "CASE 01",
-    clientLabel: "15-Person Real Estate Brokerage",
+    clientLabel: "15-Person Brokerage (7 Brokers, 8 Support)",
     location: "GOTHENBURG (ANONYMIZED)",
     headlineMetric: "+20% Revenue & 2× Capacity",
     timeframe: "Within 90 Days",
     deliveryMode: "Team AI Fluency Workshops + Slack Workflows",
     beforeState: {
-      title: "7+ hrs/week lost per broker to listing & follow-up admin",
+      title: "7+ hrs/week lost across 7 active brokers to listing & follow-up admin",
       points: [
         "Property descriptions written from scratch late at night",
         "Viewing follow-ups delayed 24–48 hrs by manual data entry",
       ],
-      costDrag: "~315,000 SEK/quarter in lost selling hours",
+      costDrag: "~315,000 SEK/quarter (7 brokers × 7 hrs/wk @ 500 SEK/hr)",
     },
     afterState: {
       title: "90-second listing & follow-up pipeline inside Slack",

@@ -235,6 +235,18 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                     className="w-full accent-[#F87171] cursor-pointer"
                   />
                 </div>
+
+                {/* Mobile Instant Readout Strip (Solves mobile scroll fold) */}
+                <div className="lg:hidden mt-4 pt-3 border-t border-white/10 flex items-center justify-between bg-[#161618] px-3.5 py-2.5 rounded-lg border border-[#2563EB]/40">
+                  <div className="flex items-center gap-1.5 font-mono text-[11px] text-[#93C5FD]">
+                    <Zap className="w-3.5 h-3.5 text-[#2563EB]" />
+                    <span>RECLAIMED:</span>
+                  </div>
+                  <div className="text-right font-mono text-xs">
+                    <span className="font-bold text-[#F4F0EA]">{hoursReclaimedYear.toLocaleString()} hrs/yr</span>
+                    <span className="text-[#3D7A5A] font-semibold ml-2">({annualSEKReclaimed.toLocaleString()} SEK)</span>
+                  </div>
+                </div>
               </div>
             </div>
 
