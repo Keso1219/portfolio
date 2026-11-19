@@ -87,6 +87,9 @@ const CHORE_PRESETS: ChorePreset[] = [
   },
 ];
 
+const numberFormatter = new Intl.NumberFormat("en-US");
+const formatNumber = (value: number) => numberFormatter.format(value);
+
 interface Props {
   onSelectChoreForContact?: (summary: string, subject: string) => void;
 }
@@ -170,7 +173,7 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                   <Flame className="w-3 h-3" /> [ INPUT: HIGH DRAG ]
                 </span>
                 <span className="font-mono text-xs text-[#A1A1AA]">
-                  {totalHoursWastedYear.toLocaleString()} hrs/yr load
+                  {formatNumber(totalHoursWastedYear)} hrs/yr load
                 </span>
               </div>
 
@@ -243,8 +246,8 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                     <span>RECLAIMED:</span>
                   </div>
                   <div className="text-right font-mono text-xs">
-                    <span className="font-bold text-[#F4F0EA]">{hoursReclaimedYear.toLocaleString()} hrs/yr</span>
-                    <span className="text-[#3D7A5A] font-semibold ml-2">({annualSEKReclaimed.toLocaleString()} SEK)</span>
+                    <span className="font-bold text-[#F4F0EA]">{formatNumber(hoursReclaimedYear)} hrs/yr</span>
+                    <span className="text-[#3D7A5A] font-semibold ml-2">({formatNumber(annualSEKReclaimed)} SEK)</span>
                   </div>
                 </div>
               </div>
@@ -282,7 +285,7 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                       <Clock className="w-3.5 h-3.5 text-[#93C5FD]" /> Hours Returned / Year
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold text-[#F4F0EA]">
-                      {hoursReclaimedYear.toLocaleString()}{" "}
+                      {formatNumber(hoursReclaimedYear)}{" "}
                       <span className="text-lg font-normal text-[#93C5FD]">hrs/yr</span>
                     </div>
                     <div className="text-[11px] font-mono text-[#71717A] mt-1">
@@ -295,11 +298,11 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                       <Coins className="w-3.5 h-3.5 text-emerald-400" /> Annual Drag Eliminated
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold text-emerald-300">
-                      {annualSEKReclaimed.toLocaleString()}{" "}
+                      {formatNumber(annualSEKReclaimed)}{" "}
                       <span className="text-lg font-normal">SEK</span>
                     </div>
                     <div className="text-[11px] font-mono text-[#71717A] mt-1">
-                      ≈ €{annualEURReclaimed.toLocaleString()} / yr in freed capacity
+                      ≈ €{formatNumber(annualEURReclaimed)} / yr in freed capacity
                     </div>
                   </div>
                 </motion.div>
@@ -337,7 +340,7 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                 onClick={() => {
                   if (onSelectChoreForContact) {
                     onSelectChoreForContact(
-                      `Hi Kevin! We have ${teamSize} people spending ~${hoursPerDay} hrs/day on "${selectedPreset.label}" (~${annualSEKReclaimed.toLocaleString()} SEK/yr drag). Let's look at eliminating it.`,
+                      `Hi Kevin! We have ${teamSize} people spending ~${hoursPerDay} hrs/day on "${selectedPreset.label}" (~${formatNumber(annualSEKReclaimed)} SEK/yr drag). Let's look at eliminating it.`,
                       `15-Min Bottleneck Audit: ${selectedPreset.label} (${teamSize} ${teamSize === 1 ? "person" : "people"})`
                     );
                   }
