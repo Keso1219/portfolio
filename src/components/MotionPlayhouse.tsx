@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { RotateCcw, Sparkles, Maximize2, X, Layers, Cpu } from "lucide-react";
+import { TiltCard3D } from "@/components/motion/TiltCard3D";
 
 interface VisualArtifact {
   id: string;
@@ -253,36 +254,37 @@ export default function MotionPlayhouse() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {ARTIFACTS.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setActiveLightbox(item)}
-                className="paper-card rounded-md overflow-hidden cursor-pointer group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative bg-[#161618] aspect-[4/4.4] overflow-hidden border-b border-[#D8D0C2]">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 right-3 bg-[#161618]/90 text-[#F4F0EA] border border-[#3A3A40] px-2.5 py-1 rounded-sm text-[10px] inline-flex items-center gap-1.5 opacity-90 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-colors">
-                      <Maximize2 className="w-3 h-3" />
-                      INSPECT
+              <TiltCard3D key={item.id} maxTilt={8} className="rounded-md">
+                <div
+                  onClick={() => setActiveLightbox(item)}
+                  className="paper-card rounded-md overflow-hidden cursor-pointer group h-full flex flex-col justify-between hover:shadow-xl"
+                >
+                  <div>
+                    <div className="relative bg-[#161618] aspect-[4/4.4] overflow-hidden border-b border-[#D8D0C2]">
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+                      />
+                      <div className="absolute top-3 right-3 bg-[#161618]/90 text-[#F4F0EA] border border-[#3A3A40] px-2.5 py-1 rounded-sm text-[10px] inline-flex items-center gap-1.5 opacity-90 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-colors">
+                        <Maximize2 className="w-3 h-3" />
+                        INSPECT
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="text-[10px] text-[#2563EB] font-semibold mb-1">
-                      {item.tag}
+                    <div className="p-4">
+                      <div className="text-[10px] text-[#2563EB] font-semibold mb-1">
+                        {item.tag}
+                      </div>
+                      <h4 className="text-lg sm:text-xl font-bold text-[#161618] mb-1 leading-snug group-hover:text-[#2563EB] transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-[#52504C] leading-relaxed">
+                        {item.subtitle}
+                      </p>
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-[#161618] mb-1 leading-snug group-hover:text-[#2563EB] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-[#52504C] leading-relaxed">
-                      {item.subtitle}
-                    </p>
                   </div>
                 </div>
-              </div>
+              </TiltCard3D>
             ))}
           </div>
         </div>

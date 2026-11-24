@@ -22,6 +22,29 @@ import BottleneckMachine from "@/components/BottleneckMachine";
 import InteractiveWorkbench from "@/components/InteractiveWorkbench";
 import MotionPlayhouse from "@/components/MotionPlayhouse";
 import { CertificationsCarousel } from "@/components/CertificationsCarousel";
+import { GlobalCursorSpotlight } from "@/components/motion/GlobalCursorSpotlight";
+import { ParticleHeading } from "@/components/motion/ParticleHeadline";
+import { TiltCard3D } from "@/components/motion/TiltCard3D";
+import { LogoMarquee, MarqueeItem } from "@/components/motion/LogoMarquee";
+import { SectionIlluminate } from "@/components/motion/SectionIlluminate";
+
+const TOOLS_ROW_ONE: MarqueeItem[] = [
+  { name: "Anthropic Certified (6x)", category: "AI Fluency" },
+  { name: "Claude Cowork", category: "Team Ops" },
+  { name: "Claude Code", category: "Engineering" },
+  { name: "Next.js + Vercel", category: "Web Systems" },
+  { name: "Microsoft 365 Copilot", category: "Enterprise" },
+  { name: "Slack Workflows", category: "Daily Briefs" },
+];
+
+const TOOLS_ROW_TWO: MarqueeItem[] = [
+  { name: "n8n Automation", category: "Integrations" },
+  { name: "Gemini & Claude APIs", category: "Structured AI" },
+  { name: "Remotion & HyperFrames", category: "Motion Systems" },
+  { name: "Gothenburg, Sweden", category: "On-Site & Remote" },
+  { name: "Zero New SaaS Licenses", category: "Cost Discipline" },
+  { name: "15-Min Bottleneck Audit", category: "Entry Point" },
+];
 
 export default function HomePage() {
   const [choreDraft, setChoreDraft] = useState<string>("");
@@ -67,6 +90,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#161618] selection:text-[#F4F0EA]">
+      {/* Global 420px Full-Site Cursor Spotlight & Hairline Card Glow */}
+      <GlobalCursorSpotlight radius={420} />
+
       {/* Sticky Top Architectural Bar */}
       <header className="sticky top-0 z-40 bg-[#F4F0EA]/90 backdrop-blur-md border-b border-[#D8D0C2]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
@@ -114,13 +140,14 @@ export default function HomePage() {
                   <span>AI WORKSHOPS & WORKFLOW ARCHITECT • GOTHENBURG</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5 font-bold">
+                <ParticleHeading
+                  as="h1"
+                  scatterRadius={50}
+                  className="text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5 font-bold"
+                >
                   Teaching humans what to{" "}
-                  <span className="text-[#2563EB]">
-                    actually do
-                  </span>{" "}
-                  with AI.
-                </h1>
+                  <span className="text-[#2563EB]">actually do</span> with AI.
+                </ParticleHeading>
 
                 <p className="text-base sm:text-xl text-[#52504C] leading-relaxed mb-7 max-w-xl">
                   I run hands-on{" "}
@@ -199,8 +226,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3-PILLAR VERIFIED PROOF STRIP */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* 3-PILLAR VERIFIED PROOF STRIP (3D TILT CARDS) */}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 {
                   badge: "[ CASE 01 // 15-PERSON BROKERAGE ]",
@@ -218,39 +245,77 @@ export default function HomePage() {
                   detail: "Replaced a bloated CRM quote with a 0 SEK-license AI router.",
                 },
               ].map((item) => (
-                <a
+                <TiltCard3D
                   key={item.badge}
-                  href="#workbench"
-                  className="paper-card rounded-md p-5 flex flex-col justify-between group"
+                  maxTilt={8}
+                  className="rounded-md"
                 >
-                  <div>
-                    <span className="text-[11px] text-[#2563EB] font-semibold block mb-1.5">
-                      {item.badge}
-                    </span>
-                    <div className="text-2xl sm:text-3xl font-bold text-[#161618] mb-1.5 group-hover:text-[#2563EB] transition-colors">
-                      {item.metric}
+                  <a
+                    href="#workbench"
+                    className="paper-card rounded-md p-5 h-full flex flex-col justify-between group hover:shadow-xl"
+                  >
+                    <div>
+                      <span className="text-[10px] sm:text-[11px] text-[#2563EB] font-semibold block mb-1.5">
+                        {item.badge}
+                      </span>
+                      <div className="text-2xl sm:text-3xl font-bold text-[#161618] mb-1.5 group-hover:text-[#2563EB] transition-colors">
+                        {item.metric}
+                      </div>
                     </div>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#52504C]">
-                    {item.detail}
-                  </p>
-                </a>
+                    <p className="text-xs sm:text-sm text-[#52504C]">
+                      {item.detail}
+                    </p>
+                  </a>
+                </TiltCard3D>
               ))}
             </div>
           </div>
         </section>
 
+        {/* INFINITE TOOLS & CREDENTIALS MARQUEE */}
+        <SectionIlluminate
+          id="tools-marquee"
+          className="py-10 border-b border-[#D8D0C2] bg-[#FAF8F5]/60 overflow-x-hidden"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-4 flex items-center justify-between gap-4">
+            <span className="text-[11px] uppercase tracking-widest text-[#52504C] font-semibold">
+              [ PRODUCTION STACK &amp; VERIFIED CREDENTIALS ]
+            </span>
+            <span className="hidden sm:inline text-[11px] uppercase tracking-widest text-[#2563EB] font-semibold">
+              HOVER TO PAUSE
+            </span>
+          </div>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-2.5">
+            <LogoMarquee items={TOOLS_ROW_ONE} durationSec={32} theme="paper" />
+            <LogoMarquee
+              items={TOOLS_ROW_TWO}
+              reverse
+              durationSec={38}
+              theme="paper"
+            />
+          </div>
+        </SectionIlluminate>
+
         {/* SECTION 01: INTERACTIVE WORKBENCH (3 ANONYMIZED CASE STUDIES) */}
-        <InteractiveWorkbench />
+        <SectionIlluminate as="div">
+          <InteractiveWorkbench />
+        </SectionIlluminate>
 
         {/* SECTION 02: THE BOTTLENECK MACHINE (INTERACTIVE CHORE CALCULATOR) */}
-        <BottleneckMachine onSelectChoreForContact={handleSelectBottleneck} />
+        <SectionIlluminate as="div">
+          <BottleneckMachine onSelectChoreForContact={handleSelectBottleneck} />
+        </SectionIlluminate>
 
         {/* SECTION 03: VISUAL ARCHITECTURE & MOTION LAB */}
-        <MotionPlayhouse />
+        <SectionIlluminate as="div">
+          <MotionPlayhouse />
+        </SectionIlluminate>
 
         {/* SECTION 04: ORIGIN & VERIFIED CREDENTIALS */}
-        <section id="origin" className="py-16 sm:py-20 border-b border-[#D8D0C2]">
+        <SectionIlluminate
+          id="origin"
+          className="py-16 sm:py-20 border-b border-[#D8D0C2]"
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               {/* Left 7 Cols: The Cross-Functional Operator */}
@@ -300,29 +365,33 @@ export default function HomePage() {
 
                 {/* Two Core Ways We Work Together */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="paper-card rounded-md p-5">
-                    <div className="text-xs text-[#2563EB] font-semibold mb-1">
-                      [ TRACK A // HANDS-ON TRAINING ]
+                  <TiltCard3D maxTilt={8} className="rounded-md">
+                    <div className="paper-card rounded-md p-5 h-full hover:shadow-lg">
+                      <div className="text-xs text-[#2563EB] font-semibold mb-1">
+                        [ TRACK A // HANDS-ON TRAINING ]
+                      </div>
+                      <h3 className="text-xl font-bold text-[#161618] mb-1.5">
+                        Half-Day AI Fluency Workshop
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
+                        Zero slides. Your team brings their real weekly bottlenecks and leaves with 3 working AI workflows inside their own accounts.
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-[#161618] mb-1.5">
-                      Half-Day AI Fluency Workshop
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
-                      Zero slides. Your team brings their real weekly bottlenecks and leaves with 3 working AI workflows inside their own accounts.
-                    </p>
-                  </div>
+                  </TiltCard3D>
 
-                  <div className="paper-card rounded-md p-5">
-                    <div className="text-xs text-[#3D7A5A] font-semibold mb-1">
-                      [ TRACK B // DONE-FOR-YOU BUILD ]
+                  <TiltCard3D maxTilt={8} className="rounded-md">
+                    <div className="paper-card rounded-md p-5 h-full hover:shadow-lg">
+                      <div className="text-xs text-[#3D7A5A] font-semibold mb-1">
+                        [ TRACK B // DONE-FOR-YOU BUILD ]
+                      </div>
+                      <h3 className="text-xl font-bold text-[#161618] mb-1.5">
+                        Custom Workflow Sprint
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
+                        I take your highest-drag chore (inbox triage, data reconciliation, or CRM routing) and build an owned automation with zero SEK license bloat.
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-[#161618] mb-1.5">
-                      Custom Workflow Sprint
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#52504C] leading-relaxed">
-                      I take your highest-drag chore (inbox triage, data reconciliation, or CRM routing) and build an owned automation with zero SEK license bloat.
-                    </p>
-                  </div>
+                  </TiltCard3D>
                 </div>
               </div>
 
@@ -332,10 +401,10 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </SectionIlluminate>
 
         {/* SECTION 05: FRICTION-FREE CONTACT BENCH */}
-        <section id="contact-bench" className="py-16 sm:py-20">
+        <SectionIlluminate id="contact-bench" className="py-16 sm:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="paper-card rounded-md p-6 sm:p-10 border-2 border-[#161618]">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#3D7A5A] bg-[#3D7A5A]/10 border border-[#3D7A5A]/30 px-3 py-1 rounded-sm mb-3 font-semibold">
@@ -478,7 +547,7 @@ export default function HomePage() {
               )}
             </div>
           </div>
-        </section>
+        </SectionIlluminate>
       </main>
 
       {/* STANDARD NORDIC CHARCOAL EDITORIAL FOOTER */}
