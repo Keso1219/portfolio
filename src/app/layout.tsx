@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ScrollDepthTracker } from "@/components/ScrollDepthTracker";
+import { GlobalCursorSpotlight } from "@/components/motion/GlobalCursorSpotlight";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-serif antialiased bg-paper text-ink bg-workshop-grid min-h-screen flex flex-col selection:bg-[#161618] selection:text-[#F4F0EA]">
+        <GlobalCursorSpotlight radius={420} />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

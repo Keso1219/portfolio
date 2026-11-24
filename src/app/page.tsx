@@ -12,6 +12,28 @@ import {
   Wrench,
 } from "lucide-react";
 import { trackEngagement } from "@/lib/analytics";
+import { ParticleHeading } from "@/components/motion/ParticleHeadline";
+import { TiltCard3D } from "@/components/motion/TiltCard3D";
+import { LogoMarquee, MarqueeItem } from "@/components/motion/LogoMarquee";
+import { SectionIlluminate } from "@/components/motion/SectionIlluminate";
+
+const TOOLS_ROW_ONE: MarqueeItem[] = [
+  { name: "Anthropic Certified (6x)", category: "AI Fluency" },
+  { name: "Claude Cowork", category: "Team Ops" },
+  { name: "Claude Code", category: "Engineering" },
+  { name: "Next.js + Vercel", category: "Web Systems" },
+  { name: "Microsoft 365 Copilot", category: "Enterprise" },
+  { name: "Slack Workflows", category: "Daily Briefs" },
+];
+
+const TOOLS_ROW_TWO: MarqueeItem[] = [
+  { name: "n8n Automation", category: "Integrations" },
+  { name: "Gemini & Claude APIs", category: "Structured AI" },
+  { name: "Remotion & HyperFrames", category: "Motion Systems" },
+  { name: "Gothenburg, Sweden", category: "On-Site & Remote" },
+  { name: "Zero New SaaS Licenses", category: "Cost Discipline" },
+  { name: "15-Min Bottleneck Audit", category: "Entry Point" },
+];
 
 const PROOF_CARDS = [
   {
@@ -45,10 +67,14 @@ export default function HomePage() {
                 <span>AI WORKSHOPS &amp; WORKFLOW ARCHITECT • GOTHENBURG</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5 font-bold">
+              <ParticleHeading
+                as="h1"
+                scatterRadius={50}
+                className="text-4xl sm:text-6xl lg:text-[64px] text-[#161618] tracking-tight leading-[1.03] mb-5 font-bold"
+              >
                 Teaching humans what to{" "}
                 <span className="text-[#2563EB]">actually do</span> with AI.
-              </h1>
+              </ParticleHeading>
 
               <p className="text-base sm:text-xl text-[#52504C] leading-relaxed mb-7 max-w-xl">
                 I run hands-on{" "}
@@ -137,106 +163,117 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 3-PILLAR VERIFIED PROOF STRIP -> /cases */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* 3-PILLAR VERIFIED PROOF STRIP (3D TILT CARDS -> /cases) */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
             {PROOF_CARDS.map((item) => (
-              <Link
-                key={item.badge}
-                href="/cases"
-                onClick={() =>
-                  trackEngagement("cta_clicked", {
-                    location: "home_proof_card",
-                    card: item.badge,
-                  })
-                }
-                className="paper-card rounded-md p-5 flex flex-col justify-between group"
-              >
-                <div>
-                  <span className="text-[11px] text-[#2563EB] font-semibold block mb-1.5">
-                    {item.badge}
-                  </span>
-                  <div className="text-2xl sm:text-3xl font-bold text-[#161618] mb-1.5 group-hover:text-[#2563EB] transition-colors">
-                    {item.metric}
+              <TiltCard3D key={item.badge} maxTilt={8} className="rounded-md">
+                <Link
+                  href="/cases"
+                  onClick={() =>
+                    trackEngagement("cta_clicked", {
+                      location: "home_proof_card",
+                      card: item.badge,
+                    })
+                  }
+                  className="paper-card rounded-md p-5 h-full flex flex-col justify-between group hover:shadow-xl"
+                >
+                  <div>
+                    <span className="text-[10px] sm:text-[11px] text-[#2563EB] font-semibold block mb-1.5">
+                      {item.badge}
+                    </span>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#161618] mb-1.5 group-hover:text-[#2563EB] transition-colors">
+                      {item.metric}
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-end justify-between gap-3">
-                  <p className="text-xs sm:text-sm text-[#52504C]">{item.detail}</p>
-                  <ArrowRight className="w-4 h-4 text-[#2563EB] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </Link>
+                  <div className="flex items-end justify-between gap-3">
+                    <p className="text-xs sm:text-sm text-[#52504C]">{item.detail}</p>
+                    <ArrowRight className="w-4 h-4 text-[#2563EB] shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </Link>
+              </TiltCard3D>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TWO OFFER TRACKS */}
-      <section className="py-14 sm:py-16 border-b border-[#D8D0C2]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-              <div className="text-xs uppercase tracking-widest text-[#2563EB] font-semibold mb-2">
-                [ TWO WAYS WE WORK TOGETHER ]
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#161618] tracking-tight">
-                Train your team, or hand me the bottleneck.
-              </h2>
-            </div>
-            <p className="text-sm text-[#52504C] max-w-sm">
-              Every engagement runs inside tools you already own—zero per-seat SaaS bloat.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="paper-card rounded-md p-6 sm:p-7 flex flex-col justify-between">
-              <div>
-                <div className="text-xs text-[#2563EB] font-semibold mb-2">
-                  [ TRACK A // HANDS-ON TRAINING ]
-                </div>
-                <h3 className="text-2xl font-bold text-[#161618] mb-2">
-                  Half-Day AI Fluency Workshop
-                </h3>
-                <p className="text-sm text-[#52504C] leading-relaxed mb-6">
-                  Zero slides. Your team brings their real weekly bottlenecks and leaves with 3 working AI workflows configured inside their own Claude, ChatGPT, or Workspace accounts.
-                </p>
-              </div>
-              <Link
-                href="/workshops"
-                onClick={() =>
-                  trackEngagement("cta_clicked", { location: "home_track_a_workshops" })
-                }
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#161618] hover:text-[#2563EB] transition-colors"
-              >
-                <span>Explore Workshop Structure &amp; Credentials</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="paper-card rounded-md p-6 sm:p-7 flex flex-col justify-between">
-              <div>
-                <div className="text-xs text-[#3D7A5A] font-semibold mb-2">
-                  [ TRACK B // DONE-FOR-YOU BUILD ]
-                </div>
-                <h3 className="text-2xl font-bold text-[#161618] mb-2">
-                  Custom Workflow Sprint
-                </h3>
-                <p className="text-sm text-[#52504C] leading-relaxed mb-6">
-                  I take your highest-drag recurring workflow—inbox triage, order reconciliation, or CRM lead routing—and ship an owned automation with 0 SEK license waste.
-                </p>
-              </div>
-              <Link
-                href="/audit"
-                onClick={() =>
-                  trackEngagement("cta_clicked", { location: "home_track_b_audit" })
-                }
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#161618] hover:text-[#3D7A5A] transition-colors"
-              >
-                <span>Calculate Your Admin Drag &amp; Book Audit</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
+      {/* TOOLS & CAPABILITIES MARQUEE */}
+      <section className="py-8 border-b border-[#D8D0C2] bg-[#EAE3D5]/40">
+        <div className="space-y-3">
+          <LogoMarquee items={TOOLS_ROW_ONE} durationSec={34} />
+          <LogoMarquee items={TOOLS_ROW_TWO} reverse durationSec={38} />
         </div>
       </section>
+
+      {/* TWO OFFER TRACKS */}
+      <SectionIlluminate>
+        <section className="py-14 sm:py-16 border-b border-[#D8D0C2]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+              <div>
+                <div className="text-xs uppercase tracking-widest text-[#2563EB] font-semibold mb-2">
+                  [ TWO WAYS WE WORK TOGETHER ]
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#161618] tracking-tight">
+                  Train your team, or hand me the bottleneck.
+                </h2>
+              </div>
+              <p className="text-sm text-[#52504C] max-w-sm">
+                Every engagement runs inside tools you already own—zero per-seat SaaS bloat.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="paper-card rounded-md p-6 sm:p-7 flex flex-col justify-between">
+                <div>
+                  <div className="text-xs text-[#2563EB] font-semibold mb-2">
+                    [ TRACK A // HANDS-ON TRAINING ]
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#161618] mb-2">
+                    Half-Day AI Fluency Workshop
+                  </h3>
+                  <p className="text-sm text-[#52504C] leading-relaxed mb-6">
+                    Zero slides. Your team brings their real weekly bottlenecks and leaves with 3 working AI workflows configured inside their own Claude, ChatGPT, or Workspace accounts.
+                  </p>
+                </div>
+                <Link
+                  href="/workshops"
+                  onClick={() =>
+                    trackEngagement("cta_clicked", { location: "home_track_a_workshops" })
+                  }
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#161618] hover:text-[#2563EB] transition-colors"
+                >
+                  <span>Explore Workshop Structure &amp; Credentials</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="paper-card rounded-md p-6 sm:p-7 flex flex-col justify-between">
+                <div>
+                  <div className="text-xs text-[#3D7A5A] font-semibold mb-2">
+                    [ TRACK B // DONE-FOR-YOU BUILD ]
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#161618] mb-2">
+                    Custom Workflow Sprint
+                  </h3>
+                  <p className="text-sm text-[#52504C] leading-relaxed mb-6">
+                    I take your highest-drag recurring workflow—inbox triage, order reconciliation, or CRM lead routing—and ship an owned automation with 0 SEK license waste.
+                  </p>
+                </div>
+                <Link
+                  href="/audit"
+                  onClick={() =>
+                    trackEngagement("cta_clicked", { location: "home_track_b_audit" })
+                  }
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#161618] hover:text-[#3D7A5A] transition-colors"
+                >
+                  <span>Calculate Your Admin Drag &amp; Book Audit</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </SectionIlluminate>
 
       {/* COMPACT EXECUTIVE BOTTOM CTA */}
       <section className="py-14 sm:py-16">
