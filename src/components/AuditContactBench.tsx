@@ -29,14 +29,15 @@ export function AuditContactBench({
   const [copiedNote, setCopiedNote] = useState<boolean>(false);
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
 
-  const defaultMessage =
-    choreDraft ||
+  const placeholderMessage =
     "Hi Kevin — here is the highest-drag manual workflow on our team right now:\n\n[Describe the weekly bottleneck in 1–2 sentences]";
 
+  const messageToSend = choreDraft.trim() ? choreDraft : placeholderMessage;
+
   const handleCopyMessage = () => {
-    navigator.clipboard.writeText(defaultMessage);
+    navigator.clipboard.writeText(messageToSend);
     setCopiedNote(true);
-    trackEngagement("copy_chore_clicked", { hasCustomDraft: Boolean(choreDraft) });
+    trackEngagement("copy_chore_clicked", { hasCustomDraft: Boolean(choreDraft.trim()) });
     setTimeout(() => setCopiedNote(false), 2500);
   };
 
@@ -59,11 +60,11 @@ export function AuditContactBench({
 
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=kevin.sorani00@gmail.com&su=${encodeURIComponent(
     emailSubject
-  )}&body=${encodeURIComponent(defaultMessage)}`;
+  )}&body=${encodeURIComponent(messageToSend)}`;
 
   const outlookComposeUrl = `https://outlook.office.com/mail/deeplink/compose?to=kevin.sorani00@gmail.com&subject=${encodeURIComponent(
     emailSubject
-  )}&body=${encodeURIComponent(defaultMessage)}`;
+  )}&body=${encodeURIComponent(messageToSend)}`;
 
   return (
     <section id="contact-bench" className="py-12 sm:py-16">
@@ -91,9 +92,10 @@ export function AuditContactBench({
             <textarea
               id="chore-textarea"
               rows={4}
-              value={defaultMessage}
+              value={choreDraft}
+              placeholder={placeholderMessage}
               onChange={(e) => onChoreDraftChange(e.target.value)}
-              className="w-full p-4 rounded-sm bg-[#F4F0EA] border border-[#161618] text-sm sm:text-base text-[#161618] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+              className="w-full p-4 rounded-sm bg-[#F4F0EA] border border-[#161618] text-sm sm:text-base text-[#161618] placeholder:text-[#52504C]/70 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
             />
           </div>
 
