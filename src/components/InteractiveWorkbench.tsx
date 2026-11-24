@@ -9,6 +9,7 @@ import {
   Layers,
   Terminal,
 } from "lucide-react";
+import { trackEngagement } from "@/lib/analytics";
 
 interface CaseStudy {
   id: string;
@@ -182,6 +183,7 @@ export default function InteractiveWorkbench() {
   const activeCase = CASE_STUDIES.find((c) => c.id === activeCaseId) || CASE_STUDIES[0];
 
   const triggerSimulation = () => {
+    trackEngagement("workflow_trace_run", { caseId: activeCase.id });
     setSimStep(0);
     setTimeout(() => setSimStep(1), 650);
     setTimeout(() => setSimStep(2), 1400);
@@ -217,6 +219,7 @@ export default function InteractiveWorkbench() {
               onClick={() => {
                 setActiveCaseId(cs.id);
                 setSimStep(null);
+                trackEngagement("case_study_switched", { caseId: cs.id });
               }}
               className={`text-left p-5 rounded-2xl border transition-all duration-200 ${
                 isSelected

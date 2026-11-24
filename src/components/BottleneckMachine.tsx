@@ -12,6 +12,7 @@ import {
   Sliders,
   Zap,
 } from "lucide-react";
+import { trackEngagement } from "@/lib/analytics";
 
 export interface ChorePreset {
   id: string;
@@ -104,6 +105,11 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
     setSelectedPreset(preset);
     setTeamSize(preset.defaultTeamSize);
     setHoursPerDay(preset.defaultHoursPerDay);
+    trackEngagement("bottleneck_clicked", {
+      action: "preset_selected",
+      presetId: preset.id,
+      defaultTeamSize: preset.defaultTeamSize,
+    });
   };
 
   // Math (220 working days/year, 82% reclaimable via deterministic workflow)
@@ -121,15 +127,15 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ink text-paper font-mono text-[11px] tracking-widest uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5 text-flow-blue" />
-            <span>[ INTERACTIVE TOY 01 • THE BOTTLENECK MACHINE ]</span>
+            <span>[ ADMIN DRAG &amp; ROI CALCULATOR • SCB BENCHMARK ]</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-ink tracking-tight leading-[1.08]">
-            Drop a boring computer chore{" "}
-            <span className="text-flow-deep">into the grinder.</span>
-          </h2>
+          <h1 className="text-3xl sm:text-5xl font-bold text-ink tracking-tight leading-[1.08]">
+            Calculate your team&apos;s{" "}
+            <span className="text-flow-deep">annual admin drag.</span>
+          </h1>
         </div>
         <p className="text-ink-muted text-sm sm:text-base max-w-sm leading-relaxed">
-          Pick one of the 4 common bottlenecks below and slide your team size to see the real annual drag (SCB 500 SEK/hr benchmark).
+          Select a recurring workflow bottleneck below and adjust your team size to quantify annual hours and payroll drag (SCB 500 SEK/hr benchmark).
         </p>
       </div>
 
@@ -338,6 +344,12 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
               <a
                 href="#contact-bench"
                 onClick={() => {
+                  trackEngagement("bottleneck_clicked", {
+                    action: "send_to_audit_bench",
+                    presetId: selectedPreset.id,
+                    teamSize,
+                    annualSEK: annualSEKReclaimed,
+                  });
                   if (onSelectChoreForContact) {
                     onSelectChoreForContact(
                       `Hi Kevin! We have ${teamSize} people spending ~${hoursPerDay} hrs/day on "${selectedPreset.label}" (~${formatNumber(annualSEKReclaimed)} SEK/yr drag). Let's look at eliminating it.`,
@@ -347,7 +359,7 @@ export default function BottleneckMachine({ onSelectChoreForContact }: Props) {
                 }}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#F4F0EA] text-[#161618] font-sans font-semibold text-xs hover:bg-[#93C5FD] transition-colors shrink-0"
               >
-                <span>Kill this bottleneck</span>
+                <span>Pre-Fill 15-Min Audit Brief</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
